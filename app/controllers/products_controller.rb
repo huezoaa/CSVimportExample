@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-  def import
+  def importaciones
 
     begin
       Product.import(params[:file])

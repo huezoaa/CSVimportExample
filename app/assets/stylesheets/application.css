@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+
+
+ #interaction {
+  font-size: 100;
+  padding:5px;
+  border: 2px solid black;
+  background-color: yellow;
+ }
+
+ table {
+  border-collapse: collapse;
+}
+
+th {
+  padding:5px;
+  border: 2px solid black;
+  background-color: #94FF70;
+}
+
+td {
+  padding:5px;
+  border:2px solid green;
+}
+
+.items {
+  background-color: #FFFFFF;
+}
+
+ .filesearch {
+  background-color: yellow;
+}
+
+.flashmessage {
+  background-color: orange;
+  font-size: 35;
+}
+
