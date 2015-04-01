@@ -4,7 +4,13 @@ class ProductsController < ApplicationController
   end
 
   def import
-    Product.import(params[:file])
-    redirect_to root_url, notice: "Products imported"
+
+    begin
+      Product.import(params[:file])
+      redirect_to root_url, notice: "Products imported"
+    rescue
+      redirect_to root_url, notice: "Invalid CSV file"
+    end
+
   end
 end
