@@ -28,19 +28,22 @@ class Product < ActiveRecord::Base
 
   require 'csv'
 
+  def self.import(file)
+    CSV.foreach(file.path, headers: false) do |row|
 
-  fields = {id: 0,
+      fields = {id: 0,
           name: 1,
           quantity: 2,
           price: 3,
           }
 
 
-  def self.import(file)
-    CSV.foreach(file.path, headers: false) do |row|
+      product_hash = {}
 
       fields.each {|key, value|
-        product_hash = {"#{key}": row[value]}
+        product_hash["#{key}"] = row[value]
+      }
+
       product  = Product.where(id: product_hash["id"])
 
       if product.count == 1
@@ -49,7 +52,6 @@ class Product < ActiveRecord::Base
         Product.create!(product_hash)
       end  # end if
 
-      }
 
     end # end CSV.foreach
   end # end self.import(file)
