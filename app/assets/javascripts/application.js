@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('.flashmessage').delay(125).fadeOut().delay(125).fadeIn()
+  .delay(125).fadeOut().delay(125).fadeIn();
+});

@@ -1,39 +1,44 @@
 
 
-  <table>
+  <table align = "center">
     <thead>
       <tr>
-        <th>Browse for file</th>
+        <!-- <th>Browse for file</th> -->
         <th>File Name</th>
         <th>Submit</th>
+        <th>Flash Message Here</th>
       </tr>
     </thead>
   <tbody>
     <tr class="filesearch">
-      <td><%= form_tag importaciones_products_path, multipart: true do %></td>
-      <td><%= file_field_tag :file %></td>
+      <td><%= form_tag importaciones_products_path, multipart: true do %>
+
+        <%#= file_field_tag :file, :class=>"button"%>
+        <input type="file" name="file" id="file" class="btn btn-small btn-primary btn-inverse"/>
+      </td>
       <!-- the above sends the :file into the params... -->
       <td><%= submit_tag "Import CSV" %></td>
+      <td><div class="flashmessage"><%= flash[:notice] %></div></td>
     </tr>
-    <% end %>
+    <%end %>
   </tbody>
   </table>
 
   <div>
   <p>
 
-<table>
+<!-- <table align="center">
   <tbody>
     <tr>
       <th class="flashmessage"><%= flash[:notice] %></th>
     </tr>
   </tbody>
-</table>
+</table> -->
 
   </p>
 </div>
 
-<table>
+<table align = "center">
   <thead>
     <tr>
       <th>Id</th>

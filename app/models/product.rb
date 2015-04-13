@@ -46,6 +46,8 @@ class Product < ActiveRecord::Base
 
       product  = Product.where(id: product_hash["id"])
 
+      # Walter said to use the function:  ".first_or_create" instead of the logic below.
+
       if product.count == 1
         product.first.update_attributes(product_hash)
       else

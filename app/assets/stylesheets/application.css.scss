@@ -10,16 +10,20 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+
  *= require_tree .
  *= require_self
  */
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
  #interaction {
   font-size: 100;
   padding:5px;
   border: 2px solid black;
   background-color: yellow;
+
  }
 
  table {
@@ -49,4 +53,17 @@ td {
   background-color: orange;
   font-size: 35;
 }
+
+.button{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  float: left;
+  margin: 0 1em 1em 0;
+  padding: 0 4em;
+  height: 3.5em;
+  font: 300 1em/3.5em 'Open Sans', sans-serif;
+}
+
+
 
